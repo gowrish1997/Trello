@@ -36,8 +36,8 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   setBoardState: (board) => set({ board }),
   updateTodoInDB: async (todo, columnId) => {
     await databases.updateDocument(
-      process.env.NEXT_PUBLIC_APPWRITE_DATABASEID!,
-      process.env.NEXT_PUBLIC_APPWRITE_COLLECTIONID!,
+      "6488b4f6b3d4d1b5338e",
+      "6488b4fe5c31c9276907",
       todo.$id,
       {
         title: todo.title,
@@ -58,8 +58,8 @@ export const useBoardStore = create<BoardState>((set, get) => ({
     }
 
     const { $id } = await databases.createDocument(
-      process.env.NEXT_PUBLIC_APPWRITE_DATABASEID!,
-      process.env.NEXT_PUBLIC_APPWRITE_COLLECTIONID!,
+      "6488b4f6b3d4d1b5338e",
+      "6488b4fe5c31c9276907",
       ID.unique(),
       {
         title: todo,
@@ -103,8 +103,8 @@ export const useBoardStore = create<BoardState>((set, get) => ({
     }
 
     await databases.deleteDocument(
-      process.env.NEXT_PUBLIC_APPWRITE_DATABASEID!,
-      process.env.NEXT_PUBLIC_APPWRITE_COLLECTIONID!,
+      "6488b4f6b3d4d1b5338e",
+      "6488b4fe5c31c9276907",
       todo.$id
     );
   },
